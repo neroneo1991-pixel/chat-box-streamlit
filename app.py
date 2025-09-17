@@ -24,7 +24,7 @@ if st.button("Gửi"):
                    "user": user, "msg": msg}
         df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
         df.to_csv(FILE, index=False)
-        st.experimental_rerun()
+        st.rerun()   # ✅ dùng cái này thay cho experimental_rerun
 
 # Hiển thị tin nhắn
 df = pd.read_csv(FILE)
